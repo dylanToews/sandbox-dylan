@@ -6,27 +6,27 @@ if (!customElements.get("td-tabs-element")) {
       this.heading_selector = "[data-tab-heading]";
       this.content_selector = "[data-tab-content]";
       this.activeIndex = 0;
+      this.headingElements = [];
+      this.contentElements = [];
     }
     connectedCallback() {
       setTimeout(() => {
         this.attachListeners();
 
-        const headingElements = document.querySelectorAll(this.heading_selector);
-        const contentElements = document.querySelectorAll(this.content_selector)  
-        // Hide all content elements
-          contentElements.forEach((contentElement, i) => {
+        this.headingElements = document.querySelectorAll(this.heading_selector);
+        this.contentElements = document.querySelectorAll(this.content_selector)  
+
+        this.contentElements.forEach((contentElement, i) => {
             contentElement.setAttribute("hidden", "true");
           });
         
-        headingElements.forEach((element, index) => {
+        this.headingElements.forEach((element, index) => {
           if(element.getAttribute("aria-selected") === "true") {
             this.activeIndex = index;
             this.setActiveTab(this.activeIndex);
           }
         })
-  
-
-     
+ 
       });
     }
     attachListeners() {
@@ -37,26 +37,21 @@ if (!customElements.get("td-tabs-element")) {
       });
     }
     setActiveContent(index) {
-      const contentElements = document.querySelectorAll(this.content_selector)  
-    // Hide all content elements
-      contentElements.forEach((contentElement, i) => {
+
+      this.contentElements.forEach((contentElement, i) => {
         contentElement.setAttribute("hidden", "true");
       });
 
-      // Show the content for the initially active tab
-      contentElements[index].removeAttribute("hidden");
+      this.contentElements[index].removeAttribute("hidden");
     }
 
     setActiveTab(index) {
-      const headingElements = document.querySelectorAll(this.heading_selector);
+  
+      this.headingElements[this.activeIndex].removeAttribute("aria-selected");
+      this.headingElements[this.activeIndex].setAttribute("tabindex", "-1");
 
-      // Remove aria-selected from the currently active tab
-      headingElements[this.activeIndex].removeAttribute("aria-selected");
-      headingElements[this.activeIndex].setAttribute("tabindex", "-1");
-
-      // Set aria-selected and tabindex to the newly active tab
-      headingElements[index].setAttribute("aria-selected", "true");
-      headingElements[index].setAttribute("tabindex", "0");
+      this.headingElements[index].setAttribute("aria-selected", "true");
+      this.headingElements[index].setAttribute("tabindex", "0");
 
       this.setActiveContent(index);
       this.activeIndex = index;      
