@@ -1,0 +1,58 @@
+{{ 'td-tabs.css' | asset_url | stylesheet_tag }}
+{{ 'td-tabs.js' | asset_url | script_tag }}
+
+<div class="td-tabs__section-wrapper section-{{ section.id }}">
+  <div class="td-tabs__section-title">
+    <h1>{{ section.settings.td-tabs__section-title }}</h1>
+  </div>
+  {% for block in section.blocks %}
+    
+    <div class="td-tabs__tab-wrapper">
+      <td-tabs-element>
+        <div data-tab-selector class="td-tabs__tab-heading">
+          {{ block.settings.td-tabs__tab-heading}}
+        </div>
+      </td-tabs-element>
+    </div>
+  {% endfor %}  
+
+</div>
+
+{% schema %}
+{
+  "name": "Custom Tab",
+  "class": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "td-tabs__section-title",
+      "label": "Section Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collapsible_row",
+      "name": "Collapsible Content",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "td-tabs__tab-heading",
+          "label": "Tab Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "td-tabs__tab-content",
+          "label": "Tab Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Tab"
+    }
+  ]
+}
+
+
+{% endschema %}

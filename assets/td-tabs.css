@@ -1,0 +1,13 @@
+.td-tabs__section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.td-tabs__tab-wrapper {
+  border: 1px solid black;
+  margin: 5px;
+}
+.td-tabs__tab-heading {
+  padding: 0px 50px;
+}
