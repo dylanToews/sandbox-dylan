@@ -3,14 +3,20 @@
 
 <div class="td-tabs__section-wrapper section-{{ section.id }}">
   <div class="td-tabs__section-title">
-    <h1>{{ section.settings.td-tabs__section-title }}</h1>
+    {% if section.settings.td-tabs__section-title != blank %}     
+      <h1>
+        {{ section.settings.td-tabs__section-title }}
+      </h1>
+    {% endif %}
   </div>
-  {% for block in section.blocks %}
-    
+
+  {% for block in section.blocks %}    
     <div class="td-tabs__tab-wrapper">
       <td-tabs-element>
         <div data-tab-selector class="td-tabs__tab-heading">
-          {{ block.settings.td-tabs__tab-heading}}
+          {% if block.settings.td-tabs__tab-heading !=blank %}            
+            {{ block.settings.td-tabs__tab-heading}}
+          {% endif %}
         </div>
       </td-tabs-element>
     </div>
@@ -20,7 +26,7 @@
 
 {% schema %}
 {
-  "name": "Custom Tab",
+  "name": "Td-Custom Tabs",
   "class": "section",
   "settings": [
     {
