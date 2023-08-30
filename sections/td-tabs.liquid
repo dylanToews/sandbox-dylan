@@ -9,7 +9,6 @@
       </h1>
     {% endif %}
   </div>
-
   <td-tabs-element class="td-tabs__wrapper">
     {% for block in section.blocks %}    
       <div 
@@ -33,10 +32,7 @@
           aria-labelledby="tab-heading-{{ forloop.index0 }}"
           {%- if block.settings.tab-open == false -%}
             hidden 
-         {%- endif -%}
-
-  
-       
+         {%- endif -%}       
           >
           {% if block.settings.td-tabs__tab-content != blank%}
             {{ block.settings.td-tabs__tab-content}}
@@ -45,7 +41,6 @@
       </div>
     {% endfor %}  
   </td-tabs-element>
-
 </div>
 
 {% schema %}
@@ -89,6 +84,4 @@
     }
   ]
 }
-
-
 {% endschema %}
