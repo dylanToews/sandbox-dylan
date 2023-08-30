@@ -5,7 +5,6 @@ if (!customElements.get("td-tabs-element")) {
       super();     
       this.heading_selector = "[data-tab-heading]";
       this.content_selector = "[data-tab-content]";
-      this.activeIndex = 0;
       this.headingElements = [];
       this.contentElements = [];
     }
