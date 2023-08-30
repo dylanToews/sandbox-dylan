@@ -10,17 +10,41 @@
     {% endif %}
   </div>
 
-  {% for block in section.blocks %}    
-    <div class="td-tabs__tab-wrapper">
-      <td-tabs-element>
-        <div data-tab-selector class="td-tabs__tab-heading">
-          {% if block.settings.td-tabs__tab-heading !=blank %}            
+  <td-tabs-element class="td-tabs__wrapper">
+    {% for block in section.blocks %}    
+      <div 
+        class="td-tabs__tab-item" 
+        data-item="{{forloop.index0}}"
+        {% if block.settings.tab-open%}
+        data-open="true"  
+        {% endif %}>
+        <div 
+          data-tab-heading
+          class="td-tabs__tab-heading"
+         aria-selected="false"
+          >
+          {% if block.settings.td-tabs__tab-heading != blank %}            
             {{ block.settings.td-tabs__tab-heading}}
           {% endif %}
         </div>
-      </td-tabs-element>
-    </div>
-  {% endfor %}  
+        <div 
+          data-tab-content
+          class="td-tabs__tab-content"
+          aria-labelledby="tab-heading-{{ forloop.index0 }}"
+          {%- if block.settings.tab-open == false -%}
+            hidden 
+         {%- endif -%}
+
+  
+       
+          >
+          {% if block.settings.td-tabs__tab-content != blank%}
+            {{ block.settings.td-tabs__tab-content}}
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}  
+  </td-tabs-element>
 
 </div>
 
@@ -49,6 +73,12 @@
           "type": "richtext",
           "id": "td-tabs__tab-content",
           "label": "Tab Content"
+        },
+        {
+          "type": "checkbox",
+          "id": "tab-open",
+          "label": "Open by default",
+          "default": false
         }
       ]
     }

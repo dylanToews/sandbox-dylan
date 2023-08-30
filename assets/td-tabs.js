@@ -3,34 +3,47 @@ if (!customElements.get("td-tabs-element")) {
   class tabCustomElement extends HTMLElement {
     constructor() {
       super();
-
-      //define your global variables
-      //best used to define your element selectors
-      //use data attributes when possible 
-      this.MY_ELEMENT_SELECTOR = "[data-tab-selector]";
+      
+      this.heading_selector = "[data-tab-heading]";
+      this.content_selector = "[data-tab-content]";
+      this.activeIndex = 0;
     }
 
     connectedCallback() {
       setTimeout(() => {
-        //listener callback
+
         this.attachListeners();
       });
     }
 
     attachListeners() {
-      //click example
-      this.querySelectorAll(this.MY_ELEMENT_SELECTOR).forEach(
-        (element) => {
-          element.addEventListener(
-            "click",
-            this.handleMyEvent.bind(this, element)
-          );
-        }
-      );
+
+      this.querySelectorAll(this.heading_selector).forEach((element, index) => {
+        element.addEventListener("click", (event) => {
+
+          this.setActiveTab(index);
+        });
+      });
     }
 
-    handleMyEvent(element) {
-      console.log('My element clicked!', element);
+    setActiveContent(index) {
+      const contentElements = document.querySelectorAll(this.content_selector)
+  
+      if (contentElements[index].hasAttribute("hidden")) {
+        contentElements[index].removeAttribute("hidden");
+      } else {
+        contentElements[index].setAttribute("hidden", "true");
+      }
+    }
+
+    setActiveTab(index) {
+      const headingElements = document.querySelectorAll(this.heading_selector);
+
+      headingElements[this.activeIndex].setAttribute("aria-selected", "true");
+      headingElements[index].setAttribute("aria-selected", "false");
+      this.setActiveContent(index);
+      this.activeIndex = index;
+      
     }
   }
 

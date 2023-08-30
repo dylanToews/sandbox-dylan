@@ -6,16 +6,32 @@
         "d2124cc7-08d7-47dd-9641-774126ef92d4": {
           "type": "collapsible_row",
           "settings": {
-            "td-tab__heading": "<p>This is the heading<\/p>",
-            "td-tab__content": "<p>This is the content <\/p>"
+            "td-tabs__tab-heading": "<p>Heading 1 <\/p>",
+            "td-tabs__tab-content": "<p>Content 1 <\/p>"
+          }
+        },
+        "5b1b8426-b07b-4a10-9eee-4dc2fe11a10b": {
+          "type": "collapsible_row",
+          "settings": {
+            "td-tabs__tab-heading": "<p>Heading 2 <\/p>",
+            "td-tabs__tab-content": "<p>Content 2<\/p>"
+          }
+        },
+        "8692a1a5-8091-4b92-a402-e342ec4abed5": {
+          "type": "collapsible_row",
+          "settings": {
+            "td-tabs__tab-heading": "<p>Heading 3 <\/p>",
+            "td-tabs__tab-content": "<p>Content 3 <\/p>"
           }
         }
       },
       "block_order": [
-        "d2124cc7-08d7-47dd-9641-774126ef92d4"
+        "d2124cc7-08d7-47dd-9641-774126ef92d4",
+        "5b1b8426-b07b-4a10-9eee-4dc2fe11a10b",
+        "8692a1a5-8091-4b92-a402-e342ec4abed5"
       ],
       "settings": {
-        "custom-tab__text": "This is the Title"
+        "td-tabs__section-title": "<p>This is the Title<\/p>"
       }
     },
     "image_banner": {
