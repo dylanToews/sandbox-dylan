@@ -4,10 +4,20 @@
   align-items: center;
 }
 
-.td-tabs__tab-wrapper {
-  border: 1px solid black;
-  margin: 5px;
+.td-tabs__wrapper {
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 0.25rem;
 }
 .td-tabs__tab-heading {
   padding: 0px 50px;
+  border: 1px solid #ececec;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  cursor: pointer;
+}
+.td-tabs__tab-heading[aria-selected="true"] {
+  background-color: #d1d1d170;
+  font-weight: 600;
 }

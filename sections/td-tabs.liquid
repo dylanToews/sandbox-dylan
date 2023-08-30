@@ -13,14 +13,18 @@
     {% for block in section.blocks %}    
       <div 
         class="td-tabs__tab-item" 
-        data-item="{{forloop.index0}}"
-        {% if block.settings.tab-open%}
-        data-open="true"  
-        {% endif %}>
+    >
         <div 
           data-tab-heading
+          id="tab-heading-{{ forloop.index0 }}"
           class="td-tabs__tab-heading"
-         aria-selected="false"
+          {% if block.settings.tab-open == false %}
+          aria-selected="false"
+          {% endif %}
+          aria-selected="true"
+          aria-controls="tab-content-{{ forloop.index0 }}"
+          role="heading"
+          type="button"
           >
           {% if block.settings.td-tabs__tab-heading != blank %}            
             {{ block.settings.td-tabs__tab-heading}}
@@ -28,11 +32,13 @@
         </div>
         <div 
           data-tab-content
+          id="tab-content-{{ forloop.index0 }}"
           class="td-tabs__tab-content"
           aria-labelledby="tab-heading-{{ forloop.index0 }}"
           {%- if block.settings.tab-open == false -%}
             hidden 
-         {%- endif -%}       
+         {%- endif -%} 
+         role="content"      
           >
           {% if block.settings.td-tabs__tab-content != blank%}
             {{ block.settings.td-tabs__tab-content}}
