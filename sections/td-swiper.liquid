@@ -1,8 +1,8 @@
 {% comment %}
-    Social Feed
+    TD - Swiper
     Import along with:
     assets/td-base.css
-    assets/section-td-social-feed.css
+    assets/section-td-swiper.css
     assets/swiper-bundle.min.css
     assets/swiper-bundle.min.js
     assets/swiper-slider.js
@@ -11,7 +11,7 @@
     Note: There are a bunch of icon snippets imported too, they come by default in Dawn.
 {% endcomment %}
 
-{{ 'section-td-social-feed.css' | asset_url | stylesheet_tag }}
+{{ 'section-td-swiper.css' | asset_url | stylesheet_tag }}
 {{ 'td-base.css' | asset_url | stylesheet_tag }}
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
@@ -71,33 +71,33 @@
   }  
 {%- endcapture -%}
 
-<div class="section-{{ section.id }} td-social-feed">
-  <div class="section-{{ section.id }}-padding td-social-feed__wrapper">
+<div class="section-{{ section.id }} td-swiper">
+  <div class="section-{{ section.id }}-padding td-swiper__wrapper">
     <div class="td-text-{{ section.settings.content_alignment }} td-page-width {% unless section.settings.page_layout == 'normal' %} td-page-width-{{ section.settings.page_layout }}{% endunless %}">
       {% if section.settings.heading != blank or section.settings.copy != blank %}
-        <div class="td-social-feed__header" style="color: {{ section.settings.text_color }};">
+        <div class="td-swiper__header" style="color: {{ section.settings.text_color }};">
           {% if section.settings.heading != blank %}
-            {% if section.settings.is_main_title %} <h1 {% else %} <h2 {% endif %} class="td-social-feed__heading td-heading">
+            {% if section.settings.is_main_title %} <h1 {% else %} <h2 {% endif %} class="td-swiper__heading td-heading">
               {{ section.settings.heading }}
             {% if section.settings.is_main_title %} </h1> {% else %} </h2> {% endif %}
           {% endif %}
           {% if section.settings.copy != false %}         
-            <div class="td-social-feed__copy">{{ section.settings.copy }}</div>
+            <div class="td-swiper__copy">{{ section.settings.copy }}</div>
           {% endif %}
         </div>
       {% endif %}  
-      <div class="td-social-feed__container">
+      <div class="td-swiper__container">
         {% if section.blocks.size > 0 %}
           <swiper-slider data-swiper-options='{{sliderOptions}}'>
             <div class="swiper  {% if section.settings.page_layout == 'full-width' %}td-mobile--no-margin{% endif %}" data-swiper>
               <div class="swiper-wrapper td-swiper-wrapper">
                 {% for block in section.blocks %}
-                  <div class="swiper-slide td-social-feed__slide" data-swiper-slide>
-                    <div class="td-social-feed__card">
-                      <a href="{{block.settings.post_url.url}}" target="_blank" class="td-social-feed__card__photo-wrapper td-media td-media--square">
+                  <div class="swiper-slide td-swiper__slide" data-swiper-slide>
+                    <div class="td-swiper__card">
+                      <a href="{{block.settings.post_url.url}}" target="_blank" class="td-swiper__card__photo-wrapper td-media td-media--square">
                         {% render 'td-image', object_image: block.settings.image %}                         
                       </a>
-                      <div class="td-social-feed__card_lower-container">
+                      <div class="td-swiper__card_lower-container">
                         {% if block.settings.account_image != blank %}
                           <a href="{{block.settings.useraccount_link}}" target="_blank">
                             <div class="td-media td-media--circle">
@@ -105,12 +105,12 @@
                             </div>
                           </a>
                         {% endif %}
-                        <div class="td-social-feed__card_text-container">
+                        <div class="td-swiper__card_text-container">
                           <h5>{{block.settings.username}}</h5>
                           <a href="{{block.settings.useraccount_link}}" target="_blank">{{block.settings.usertag}}</a>
                         </div>
                         {% if block.settings.social_icon != "" %}
-                          <div class="td-social-feed__icon td-media">                          
+                          <div class="td-swiper__icon td-media">                          
                             {% case block.settings.social_icon %}
                               {% when 'instagram'%}
                                 {% render 'icon-instagram' %}
@@ -134,7 +134,7 @@
                       </div>
                     </div>
                     {% if block.settings.product != blank %}
-                      <a class="td-social-feed__card__product" href="{{ block.settings.product.url }}">
+                      <a class="td-swiper__card__product" href="{{ block.settings.product.url }}">
                         {{ block.settings.product.title }}
                       </a>
                     {% endif %}
@@ -153,7 +153,7 @@
         {% endif %}
       </div>
       {%- if section.settings.button_link != blank and section.settings.button_label -%}
-        <div class="td-social-feed__btn-container">
+        <div class="td-swiper__btn-container">
           <a href="{{ section.settings.button_link }}" class="td-button td-mobile--full-width">{{ section.settings.button_label | escape }}</a>            
         </div>
       {%- endif -%}
@@ -163,7 +163,7 @@
 
 {% schema %}
 {
-  "name": "Social Feed",
+  "name": "TD - Swiper",
   "settings": [
     {
       "type": "header",
@@ -450,7 +450,7 @@
   ],
   "presets": [
     {
-      "name": "Social Feed",
+      "name": "TD - Swiper",
       "category": "Components"
     }
   ]

@@ -1,5 +1,112 @@
 {
   "sections": {
+    "0491925d-0488-4834-b01e-212e47d929d0": {
+      "type": "td-swiper",
+      "blocks": {
+        "630482f8-a923-4ef6-be75-9a583e048ede": {
+          "type": "post",
+          "settings": {
+            "post_url": "",
+            "username": "Username",
+            "usertag": "@usertag",
+            "useraccount_link": "",
+            "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
+            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "product": "",
+            "social_icon": ""
+          }
+        },
+        "9a2fc28d-9808-4f3c-9fb2-1a5c30ea9e28": {
+          "type": "post",
+          "settings": {
+            "post_url": "",
+            "username": "Username",
+            "usertag": "@usertag",
+            "useraccount_link": "",
+            "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
+            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "product": "",
+            "social_icon": ""
+          }
+        },
+        "84eff639-6198-4c06-821c-330aea817cc9": {
+          "type": "post",
+          "settings": {
+            "post_url": "",
+            "username": "Username",
+            "usertag": "@usertag",
+            "useraccount_link": "",
+            "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
+            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "product": "",
+            "social_icon": ""
+          }
+        },
+        "cafde085-f1f3-4bd3-9cc1-daf8cd0a3b1c": {
+          "type": "post",
+          "settings": {
+            "post_url": "",
+            "username": "Username",
+            "usertag": "@usertag",
+            "useraccount_link": "",
+            "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
+            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "product": "",
+            "social_icon": ""
+          }
+        },
+        "5331c520-e78c-41d6-a672-4e86a1d4b070": {
+          "type": "post",
+          "settings": {
+            "post_url": "",
+            "username": "Username",
+            "usertag": "@usertag",
+            "useraccount_link": "",
+            "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
+            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "product": "",
+            "social_icon": ""
+          }
+        },
+        "cd1d817c-e120-4857-a81a-c4ba6b24477d": {
+          "type": "post",
+          "disabled": true,
+          "settings": {
+            "post_url": "",
+            "username": "Username",
+            "usertag": "@usertag",
+            "useraccount_link": "",
+            "product": "",
+            "social_icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "630482f8-a923-4ef6-be75-9a583e048ede",
+        "9a2fc28d-9808-4f3c-9fb2-1a5c30ea9e28",
+        "84eff639-6198-4c06-821c-330aea817cc9",
+        "cafde085-f1f3-4bd3-9cc1-daf8cd0a3b1c",
+        "5331c520-e78c-41d6-a672-4e86a1d4b070",
+        "cd1d817c-e120-4857-a81a-c4ba6b24477d"
+      ],
+      "settings": {
+        "heading": "This is the Heading",
+        "is_main_title": false,
+        "copy": "<p>@add_your_handle<\/p>",
+        "button_label": "Follow us",
+        "button_link": "",
+        "show_pagination": "always",
+        "show_navigation_arrows": "dsk",
+        "autorotate": false,
+        "autorotate_speed": 5,
+        "text_color": "#000",
+        "bg_color": "#FFF",
+        "page_layout": "wide",
+        "content_alignment": "center",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "5132d4b0-b275-4935-b104-af26eba11be7": {
       "type": "td-tabs",
       "blocks": {
@@ -36,48 +143,10 @@
       "settings": {
         "td-tabs__section-title": "<p>This is the Title<\/p>"
       }
-    },
-    "4897dce2-26fb-4e95-b090-f3b86cfa8705": {
-      "type": "td-social-feed",
-      "blocks": {
-        "2b6d69fe-cfa8-4956-9d0b-a6dff40cfa1e": {
-          "type": "post",
-          "settings": {
-            "post_url": "",
-            "username": "Username",
-            "usertag": "@usertag",
-            "useraccount_link": "",
-            "image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
-            "account_image": "shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
-            "product": "",
-            "social_icon": ""
-          }
-        }
-      },
-      "block_order": [
-        "2b6d69fe-cfa8-4956-9d0b-a6dff40cfa1e"
-      ],
-      "settings": {
-        "heading": "This is the Heading",
-        "is_main_title": false,
-        "copy": "<p>This is the subheading <\/p>",
-        "button_label": "Follow us",
-        "button_link": "",
-        "show_pagination": "always",
-        "show_navigation_arrows": "dsk",
-        "autorotate": false,
-        "autorotate_speed": 5,
-        "text_color": "#000",
-        "bg_color": "#FFF",
-        "page_layout": "wide",
-        "content_alignment": "center",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
     }
   },
   "order": [
-    "5132d4b0-b275-4935-b104-af26eba11be7",
-    "4897dce2-26fb-4e95-b090-f3b86cfa8705"
+    "0491925d-0488-4834-b01e-212e47d929d0",
+    "5132d4b0-b275-4935-b104-af26eba11be7"
   ]
 }
