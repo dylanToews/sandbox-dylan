@@ -1,0 +1,56 @@
+{% comment %}
+    Renders an image element
+    Accepts:
+    - object_image: {Object} Image Liquid object (required)
+    - attributes: {String} Additional attributes names (optional)
+    - class: {String} Additional class names (optional)
+    - fit: {'cover' | 'contain' | 'scale-down'} Image object fit. Default to 'cover' (optional)
+    - default_load: {Boolean} Determines whether to avoid lazy loading the image (e.g. first banner slide on page) (Optional)
+    - width: {Number} Custom width (optional)
+    - height: {Number} Custom height (optional)
+
+    Usage:
+    {% render 'object_image' with object_image %}
+{% endcomment %}
+
+{%- capture widths -%}
+    {%- if object_image.width > 120 -%}120,{%- endif -%}
+    {%- if object_image.width > 240 -%}240,{%- endif -%}
+    {%- if object_image.width > 360 -%}360,{%- endif -%}
+    {%- if object_image.width > 540 -%}540,{%- endif -%}
+    {%- if object_image.width > 720 -%}720,{%- endif -%}
+    {%- if object_image.width > 900 -%}900,{%- endif -%}
+    {%- if object_image.width > 1080 -%}1080,{%- endif -%}
+    {%- if object_image.width > 1296 -%}1296,{%- endif -%}
+    {%- if object_image.width > 1512 -%}1512,{%- endif -%}
+    {%- if object_image.width > 1728 -%}1728,{%- endif -%}
+    {%- if object_image.width > 1950 -%}1950,{%- endif -%}
+    {%- if object_image.width > 2100 -%}2100,{%- endif -%}
+    {%- if object_image.width > 3000 -%}3000,{%- endif -%}
+    {%- if object_image.width > 3750 -%}3750,{%- endif -%}
+    {%- if object_image.width > 4100 -%}4100,{%- endif -%}
+    {{ object_image.width }}
+{%- endcapture -%}
+
+{%- capture srcSet -%}
+  {%- assign splitWidths = widths | split: "," -%}
+  {%- for width in splitWidths -%}
+    {%- capture widthFilterString -%}{{ width | strip }}x{%- endcapture -%}
+    {{ object_image | img_url: widthFilterString }} {{ width | strip }}w,
+  {%- endfor -%}
+{%- endcapture -%}
+
+<img
+  src="{{ object_image | image_url: width: 165 }}"
+  srcset="{{ srcSet }}"
+  sizes="auto"
+  width="{{ width | default: object_image.width }}"
+  height="{{ height | default: object_image.height }}"
+  alt="{{ object_image.alt | escape }}"
+  class="td-img td-img--{{ fit | default: 'cover' }} {{ class }}"
+  style="object-position: {{ object_image.presentation.focal_point }};"
+  {% unless default_load %}
+    loading="lazy"
+  {% endunless %}
+  {{ attributes }}
+/>
