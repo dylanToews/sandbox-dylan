@@ -12,6 +12,12 @@
 {% endcomment %}
 
 {{ 'section-td-social-feed.css' | asset_url | stylesheet_tag }}
+{{ 'td-base.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+<script src="{{ 'swiper-slider.js' | asset_url }}" defer></script>
+
 
 {%- style -%}  
   .section-{{ section.id }} {

@@ -7,21 +7,24 @@
           "type": "collapsible_row",
           "settings": {
             "td-tabs__tab-heading": "<p>Heading 1 <\/p>",
-            "td-tabs__tab-content": "<p>Content 1 <\/p>"
+            "td-tabs__tab-content": "<p>Content 1 <\/p>",
+            "tab-open": false
           }
         },
         "5b1b8426-b07b-4a10-9eee-4dc2fe11a10b": {
           "type": "collapsible_row",
           "settings": {
             "td-tabs__tab-heading": "<p>Heading 2 <\/p>",
-            "td-tabs__tab-content": "<p>Content 2<\/p>"
+            "td-tabs__tab-content": "<p>Content 2<\/p>",
+            "tab-open": false
           }
         },
         "8692a1a5-8091-4b92-a402-e342ec4abed5": {
           "type": "collapsible_row",
           "settings": {
             "td-tabs__tab-heading": "<p>Heading 3 <\/p>",
-            "td-tabs__tab-content": "<p>Content 3 <\/p>"
+            "td-tabs__tab-content": "<p>Content 3 <\/p>",
+            "tab-open": false
           }
         }
       },
@@ -34,79 +37,47 @@
         "td-tabs__section-title": "<p>This is the Title<\/p>"
       }
     },
-    "image_banner": {
-      "type": "image-banner",
+    "4897dce2-26fb-4e95-b090-f3b86cfa8705": {
+      "type": "td-social-feed",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "2b6d69fe-cfa8-4956-9d0b-a6dff40cfa1e": {
+          "type": "post",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "post_url": "",
+            "username": "Username",
+            "usertag": "@usertag",
+            "useraccount_link": "",
+            "image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "account_image": "shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
+            "product": "",
+            "social_icon": ""
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "2b6d69fe-cfa8-4956-9d0b-a6dff40cfa1e"
       ],
-      "disabled": true,
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "inverse",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "heading": "This is the Heading",
+        "is_main_title": false,
+        "copy": "<p>This is the subheading <\/p>",
+        "button_label": "Follow us",
+        "button_link": "",
+        "show_pagination": "always",
+        "show_navigation_arrows": "dsk",
+        "autorotate": false,
+        "autorotate_speed": 5,
+        "text_color": "#000",
+        "bg_color": "#FFF",
+        "page_layout": "wide",
+        "content_alignment": "center",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
     "5132d4b0-b275-4935-b104-af26eba11be7",
-    "image_banner",
-    "featured_collection"
+    "4897dce2-26fb-4e95-b090-f3b86cfa8705"
   ]
 }
