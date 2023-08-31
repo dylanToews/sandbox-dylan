@@ -1,15 +1,14 @@
 {% comment %}
-    TD - Swiper
-    Import along with:
-    assets/td-base.css
-    assets/section-td-swiper.css
-    assets/swiper-bundle.min.css
-    assets/swiper-bundle.min.js
-    assets/swiper-slider.js
-    snippets/td-image.liquid
+  TD - Swiper
+  Import along with:
+  assets/td-base.css
+  assets/section-td-swiper.css
+  assets/swiper-bundle.min.css
+  assets/swiper-bundle.min.js
+  assets/swiper-slider.js
+  snippets/td-image.liquid
 
-    Note: There are a bunch of icon snippets imported too, they come by default in Dawn.
-{% endcomment %}
+  Note: There are a bunch of icon snippets imported too, they come by default in Dawn.{% endcomment %}
 
 {{ 'section-td-swiper.css' | asset_url | stylesheet_tag }}
 {{ 'td-base.css' | asset_url | stylesheet_tag }}
@@ -19,9 +18,9 @@
 <script src="{{ 'swiper-slider.js' | asset_url }}" defer></script>
 
 
-{%- style -%}  
-  .section-{{ section.id }} {
-    background-color: {{ section.settings.bg_color }};  
+{%- style -%}
+  .section-{{ section.id }}{
+    background-color: {{ section.settings.bg_color }};
     color: {{ section.settings.text_color }};
     --swiper-navigation-color: {{ section.settings.text_color }};
     --swiper-pagination-color: {{ section.settings.text_color }};
@@ -43,33 +42,30 @@
 {%- assign autorotate_speed = section.settings.autorotate_speed | times: 1000 -%}
 {%- capture sliderOptions -%}
   {
-    "centeredSlides": true,
-    "slidesPerView": 1.4,
-    "spaceBetween": 10,
-    {%- if section.settings.autorotate -%}
+      "centeredSlides": true,
+      "slidesPerView": 1.4,
+      "spaceBetween": 10,{%- if section.settings.autorotate -%}
     "autoplay": {
-      "delay": {{ autorotate_speed }}
+          "delay":
+    {{ autorotate_speed }}
     },
-    {%- endif -%}
-    {%- if section.settings.show_pagination != blank -%}
+  {%- endif -%}
+  {%- if section.settings.show_pagination != blank -%}
     "pagination": {
-      "el": ".swiper-pagination",
-      "clickable": true
-    },
-    {%- endif -%}
-    {%- if section.settings.show_navigation_arrows != blank -%}
+          "el": ".swiper-pagination",
+          "clickable": true
+        },{%- endif -%}
+  {%- if section.settings.show_navigation_arrows != blank -%}
     "navigation": {
-      "nextEl": ".swiper-button-next",
-      "prevEl": ".swiper-button-prev"
-    },
-    {%- endif -%}
-    "breakpoints": {
-      "450": {
-        "slidesPerView": "auto"
+          "nextEl": ".swiper-button-next",
+          "prevEl": ".swiper-button-prev"
+        },{%- endif -%}
+  "breakpoints": {
+        "450": {
+          "slidesPerView": "auto"
+        }
       }
-    }
-  }  
-{%- endcapture -%}
+    }{%- endcapture -%}
 
 <div class="section-{{ section.id }} td-swiper">
   <div class="section-{{ section.id }}-padding td-swiper__wrapper">
@@ -77,15 +73,16 @@
       {% if section.settings.heading != blank or section.settings.sub-heading != blank %}
         <div class="td-swiper__header" style="color: {{ section.settings.text_color }};">
           {% if section.settings.heading != blank %}
-           <div class="td-swiper__heading td-heading">
+            <div class="td-swiper__heading td-heading">
               {{ section.settings.heading }}
-           </div>
+            </div>
           {% endif %}
-          {% if section.settings.sub-heading != false %}         
-            <div class="td-swiper__sub-heading">{{ section.settings.sub-heading }}</div>
+          {% if section.settings.sub-heading != false %}
+            <div class="td-swiper__sub-heading">{{ section.settings.sub-heading }}
+            </div>
           {% endif %}
         </div>
-      {% endif %}  
+      {% endif %}
       <div class="td-swiper__container">
         {% if section.blocks.size > 0 %}
           <swiper-slider data-swiper-options='{{sliderOptions}}'>
@@ -94,23 +91,25 @@
                 {% for block in section.blocks %}
                   <div class="swiper-slide td-swiper__slide" data-swiper-slide>
                     <div class="td-swiper__card">
-                      <a href="{{block.settings.post_url.url}}" target="_blank" class="td-swiper__card__photo-wrapper td-media td-media--square">
-                        {% render 'td-image', object_image: block.settings.image %}                         
+                      <a href="{{block.settings.content_url.url}}" target="_blank" class="td-swiper__card__photo-wrapper td-media td-media--square">
+                        {% render 'td-image', object_image: block.settings.image %}
                       </a>
                       <div class="td-swiper__card_lower-container">
-                        {% if block.settings.account_image != blank %}
-                          <a href="{{block.settings.useraccount_link}}" target="_blank">
+                        {% if block.settings.secondary_image != blank %}
+                          <a href="{{block.settings.card_linked-text-url}}" target="_blank">
                             <div class="td-media td-media--circle">
-                              {% render 'td-image', object_image: block.settings.account_image %}
+                              {% render 'td-image', object_image: block.settings.secondary_image %}
                             </div>
                           </a>
                         {% endif %}
                         <div class="td-swiper__card_text-container">
-                          <h5>{{block.settings.username}}</h5>
-                          <a href="{{block.settings.useraccount_link}}" target="_blank">{{block.settings.usertag}}</a>
+                          <h5>{{block.settings.card_text}}
+                          </h5>
+                          <a href="{{block.settings.card_linked-text-url}}" target="_blank">{{block.settings.card_linked-text}}
+                          </a>
                         </div>
                         {% if block.settings.social_icon != "" %}
-                          <div class="td-swiper__icon td-media">                          
+                          <div class="td-swiper__icon td-media">
                             {% case block.settings.social_icon %}
                               {% when 'instagram'%}
                                 {% render 'icon-instagram' %}
@@ -127,8 +126,8 @@
                               {% when 'tumblr'%}
                                 {% render 'icon-tumblr' %}
                               {% when 'snapchat'%}
-                                {% render 'icon-snapchat' %}                            
-                            {% endcase %}                            
+                                {% render 'icon-snapchat' %}
+                            {% endcase %}
                           </div>
                         {% endif %}
                       </div>
@@ -145,8 +144,12 @@
                 <div class="swiper-pagination {% if section.settings.show_pagination != 'always' %}td-only-{{ section.settings.show_pagination }}{% endif %}"></div>
               {%- endif -%}
               {%- if section.settings.show_navigation_arrows != blank -%}
-                <div class="swiper-button-prev {% if section.settings.show_navigation_arrows != 'always' %}td-only-{{ section.settings.show_navigation_arrows }}{% endif %}"><span></span></div>
-                <div class="swiper-button-next {% if section.settings.show_navigation_arrows != 'always' %}td-only-{{ section.settings.show_navigation_arrows }}{% endif %}"><span></span></div>
+                <div class="swiper-button-prev {% if section.settings.show_navigation_arrows != 'always' %}td-only-{{ section.settings.show_navigation_arrows }}{% endif %}">
+                  <span></span>
+                </div>
+                <div class="swiper-button-next {% if section.settings.show_navigation_arrows != 'always' %}td-only-{{ section.settings.show_navigation_arrows }}{% endif %}">
+                  <span></span>
+                </div>
               {%- endif -%}
             </div>
           </swiper-slider>
@@ -154,7 +157,8 @@
       </div>
       {%- if section.settings.button_link != blank and section.settings.button_label -%}
         <div class="td-swiper__btn-container">
-          <a href="{{ section.settings.button_link }}" class="td-button td-mobile--full-width">{{ section.settings.button_label | escape }}</a>            
+          <a href="{{ section.settings.button_link }}" class="td-button td-mobile--full-width">{{ section.settings.button_label | escape }}
+          </a>
         </div>
       {%- endif -%}
     </div>
@@ -162,291 +166,258 @@
 </div>
 
 {% schema %}
-{
-  "name": "TD - Swiper",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Header"
-    },
-    {
-      "type": "richtext",
-      "id": "heading",
-      "label": "Heading",
-      "default": "<h1>This is a Heading</h1>"
-    },
-    {
-      "type": "richtext",
-      "id": "sub-heading",
-      "label": "Sub-Heading",
-      "default": "<p>This is a Sub-Heading</p>"
-    },
-    {
-      "type": "header",
-      "content": "Button"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "default": "Button",
-      "label": "Button label"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button link"
-    },
-    {
-      "type": "header",
-      "content": "Slider"
-    },
-    {
-      "type": "select",
-      "id": "show_pagination",
-      "label": "Show pagination",
-      "options": [
-        {
-          "value": "",
-          "label": "Never"
-        },
-        {
-          "value": "mb",
-          "label": "Only on mobile"
-        },
-        {
-          "value": "dsk",
-          "label": "Only on desktop"
-        },
-        {
-          "value": "always",
-          "label": "Always"
-        }
-      ],
-      "default": "always"
-    },
-    {
-      "type": "select",
-      "id": "show_navigation_arrows",
-      "label": "Show navigation arrows",
-      "options": [
-        {
-          "value": "",
-          "label": "Never"
-        },
-        {
-          "value": "mb",
-          "label": "Only on mobile"
-        },
-        {
-          "value": "dsk",
-          "label": "Only on desktop"
-        },
-        {
-          "value": "always",
-          "label": "Always"
-        }
-      ],
-      "default": "dsk"
-    },
-    {
-      "type": "checkbox",
-      "id": "autorotate",
-      "label": "Auto-rotate slides",
-      "default": false
-    },
-    {
-      "type": "range",
-      "id": "autorotate_speed",
-      "label": "Change slides every",
-      "max": 9,
-      "min": 3,
-      "step": 2,
-      "unit": " s",
-      "default": 5
-    },
-    {
-      "type": "header",
-      "content": "Layout"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#000"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Background Color",
-      "default": "#FFF"
-    },
-    {
-      "type": "select",
-      "id": "page_layout",
-      "label": "Layout",
-      "default": "wide",
-      "options": [
-        {
-          "value": "full-width",
-          "label": "Full width"
-        },
-        {
-          "value": "wide",
-          "label": "Wide"
-        },
-        {
-          "value": "normal",
-          "label": "Normal"
-        },
-        {
-          "value": "narrow",
-          "label": "Narrow"
-        },
-        {
-          "value": "slim",
-          "label": "Slim"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Centered"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        },
-        {
-          "value": "justify",
-          "label": "Justified"
-        }
-      ],
-      "default": "center",
-      "label": "Text alignment"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Padding top",
-      "default": 80
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Padding bottom",
-      "default": 80
-    }
-  ],
-  "blocks": [
-    {
-      "type": "post",
-      "name": "Post",
-      "settings": [
-        {
-          "type": "url",
-          "id": "post_url",
-          "label": "Post Link"
-        },
-        {
-          "type": "text",
-          "id": "username",
-          "label": "Username",
-          "default": "Username"
-        },
-        {
-          "type": "text",
-          "id": "usertag",
-          "label": "User Tag",
-          "default": "@usertag"
-        },
-        {
-          "type": "url",
-          "id": "useraccount_link",
-          "label": "User Account Link"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "image_picker",
-          "id": "account_image",
-          "label": "Account Image"
-        },
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Related product"
-        },
-        {
-          "type": "select",
-          "id": "social_icon",
-          "label": "Social media icon",
-          "default": "",
-          "options": [
-            {
-              "value": "",
-              "label": "None"
-            },
-            {
-              "value": "instagram",
-              "label": "Instagram"
-            },
-            {
-              "value": "tiktok",
-              "label": "Tiktok"
-            },
-            {
-              "value": "snapchat",
-              "label": "Snapchat"
-            },
-            {
-              "value": "youtube",
-              "label": "Youtube"
-            },
-            {
-              "value": "tumblr",
-              "label": "Tumblr"
-            },
-            {
-              "value": "pinterest",
-              "label": "Pinterest"
-            },
-            {
-              "value": "facebook",
-              "label": "Facebook"
-            },
-            {
-              "value": "twitter",
-              "label": "Twitter"
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "TD - Swiper",
-      "category": "Components"
-    }
-  ]
-}
-{% endschema %}
+  {
+    "name": "TD - Swiper",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading",
+        "default": "<h1>This is a Heading</h1>"
+      },
+      {
+        "type": "richtext",
+        "id": "sub-heading",
+        "label": "Sub-Heading",
+        "default": "<p>This is a Sub-Heading</p>"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      }, {
+        "type": "text",
+        "id": "button_label",
+        "default": "Button",
+        "label": "Button label"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }, {
+        "type": "header",
+        "content": "Slider"
+      }, {
+        "type": "select",
+        "id": "show_pagination",
+        "label": "Show pagination",
+        "options": [
+          {
+            "value": "",
+            "label": "Never"
+          }, {
+            "value": "mb",
+            "label": "Only on mobile"
+          }, {
+            "value": "dsk",
+            "label": "Only on desktop"
+          }, {
+            "value": "always",
+            "label": "Always"
+          }
+        ],
+        "default": "always"
+      }, {
+        "type": "select",
+        "id": "show_navigation_arrows",
+        "label": "Show navigation arrows",
+        "options": [
+          {
+            "value": "",
+            "label": "Never"
+          }, {
+            "value": "mb",
+            "label": "Only on mobile"
+          }, {
+            "value": "dsk",
+            "label": "Only on desktop"
+          }, {
+            "value": "always",
+            "label": "Always"
+          }
+        ],
+        "default": "dsk"
+      }, {
+        "type": "checkbox",
+        "id": "autorotate",
+        "label": "Auto-rotate slides",
+        "default": false
+      }, {
+        "type": "range",
+        "id": "autorotate_speed",
+        "label": "Change slides every",
+        "max": 9,
+        "min": 3,
+        "step": 2,
+        "unit": " s",
+        "default": 5
+      }, {
+        "type": "header",
+        "content": "Layout"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000"
+      }, {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#FFF"
+      }, {
+        "type": "select",
+        "id": "page_layout",
+        "label": "Layout",
+        "default": "wide",
+        "options": [
+          {
+            "value": "full-width",
+            "label": "Full width"
+          },
+          {
+            "value": "wide",
+            "label": "Wide"
+          },
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "narrow",
+            "label": "Narrow"
+          }, {
+            "value": "slim",
+            "label": "Slim"
+          }
+        ]
+      }, {
+        "type": "select",
+        "id": "content_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Centered"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }, {
+            "value": "justify",
+            "label": "Justified"
+          }
+        ],
+        "default": "center",
+        "label": "Text alignment"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 80
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 80
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "url",
+            "id": "card_url",
+            "label": "Card Link"
+          },
+          {
+            "type": "text",
+            "id": "card_text",
+            "label": "Card Text",
+            "default": "Text on the card"
+          },
+          {
+            "type": "text",
+            "id": "card_linked-text",
+            "label": "Linked Text",
+            "default": "Linked card text"
+          },
+          {
+            "type": "url",
+            "id": "card_linked-text-url",
+            "label": "Linked Text URL"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Main Image"
+          }, {
+            "type": "image_picker",
+            "id": "secondary_image",
+            "label": "Secondary Image"
+          }, {
+            "type": "product",
+            "id": "product",
+            "label": "Related product"
+          }, {
+            "type": "select",
+            "id": "social_icon",
+            "label": "Social media icon",
+            "default": "",
+            "options": [
+              {
+                "value": "",
+                "label": "None"
+              },
+              {
+                "value": "instagram",
+                "label": "Instagram"
+              },
+              {
+                "value": "tiktok",
+                "label": "Tiktok"
+              },
+              {
+                "value": "snapchat",
+                "label": "Snapchat"
+              }, {
+                "value": "youtube",
+                "label": "Youtube"
+              }, {
+                "value": "tumblr",
+                "label": "Tumblr"
+              }, {
+                "value": "pinterest",
+                "label": "Pinterest"
+              }, {
+                "value": "facebook",
+                "label": "Facebook"
+              }, {
+                "value": "twitter",
+                "label": "Twitter"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "TD - Swiper",
+        "category": "Components"
+      }
+    ]
+  }
+{% endschema %}}

@@ -3,94 +3,67 @@
     "0491925d-0488-4834-b01e-212e47d929d0": {
       "type": "td-swiper",
       "blocks": {
-        "630482f8-a923-4ef6-be75-9a583e048ede": {
-          "type": "post",
+        "84fc66d4-55e9-46f7-9543-de7f014f04f7": {
+          "type": "card",
           "settings": {
-            "post_url": "",
-            "username": "Username",
-            "usertag": "@usertag",
-            "useraccount_link": "",
-            "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
-            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "card_url": "",
+            "card_text": "Text on the card",
+            "card_linked-text": "Linked card text",
+            "card_linked-text-url": "",
+            "image": "shopify:\/\/shop_images\/woman-poses-in-dark-room.jpg",
+            "secondary_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
             "product": "",
             "social_icon": ""
           }
         },
-        "9a2fc28d-9808-4f3c-9fb2-1a5c30ea9e28": {
-          "type": "post",
+        "53923665-f8db-4bcc-a27c-9e2ab381d6fd": {
+          "type": "card",
           "settings": {
-            "post_url": "",
-            "username": "Username",
-            "usertag": "@usertag",
-            "useraccount_link": "",
-            "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
-            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "card_url": "",
+            "card_text": "Text on the card",
+            "card_linked-text": "Linked card text",
+            "card_linked-text-url": "",
+            "image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "secondary_image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
             "product": "",
             "social_icon": ""
           }
         },
-        "84eff639-6198-4c06-821c-330aea817cc9": {
-          "type": "post",
+        "220d9743-b22d-46e9-9ba0-a2829d2297e6": {
+          "type": "card",
           "settings": {
-            "post_url": "",
-            "username": "Username",
-            "usertag": "@usertag",
-            "useraccount_link": "",
-            "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
-            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "card_url": "",
+            "card_text": "Text on the card",
+            "card_linked-text": "Linked card text",
+            "card_linked-text-url": "",
+            "image": "shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
+            "secondary_image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
             "product": "",
             "social_icon": ""
           }
         },
-        "cafde085-f1f3-4bd3-9cc1-daf8cd0a3b1c": {
-          "type": "post",
+        "ffcfb661-7d34-48a1-a3e6-196351b3144f": {
+          "type": "card",
           "settings": {
-            "post_url": "",
-            "username": "Username",
-            "usertag": "@usertag",
-            "useraccount_link": "",
+            "card_url": "",
+            "card_text": "Text on the card",
+            "card_linked-text": "Linked card text",
+            "card_linked-text-url": "",
             "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
-            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
-            "product": "",
-            "social_icon": ""
-          }
-        },
-        "5331c520-e78c-41d6-a672-4e86a1d4b070": {
-          "type": "post",
-          "settings": {
-            "post_url": "",
-            "username": "Username",
-            "usertag": "@usertag",
-            "useraccount_link": "",
-            "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
-            "account_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
-            "product": "",
-            "social_icon": ""
-          }
-        },
-        "cd1d817c-e120-4857-a81a-c4ba6b24477d": {
-          "type": "post",
-          "disabled": true,
-          "settings": {
-            "post_url": "",
-            "username": "Username",
-            "usertag": "@usertag",
-            "useraccount_link": "",
+            "secondary_image": "shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
             "product": "",
             "social_icon": ""
           }
         }
       },
       "block_order": [
-        "630482f8-a923-4ef6-be75-9a583e048ede",
-        "9a2fc28d-9808-4f3c-9fb2-1a5c30ea9e28",
-        "84eff639-6198-4c06-821c-330aea817cc9",
-        "cafde085-f1f3-4bd3-9cc1-daf8cd0a3b1c",
-        "5331c520-e78c-41d6-a672-4e86a1d4b070",
-        "cd1d817c-e120-4857-a81a-c4ba6b24477d"
+        "84fc66d4-55e9-46f7-9543-de7f014f04f7",
+        "53923665-f8db-4bcc-a27c-9e2ab381d6fd",
+        "220d9743-b22d-46e9-9ba0-a2829d2297e6",
+        "ffcfb661-7d34-48a1-a3e6-196351b3144f"
       ],
       "settings": {
-        "heading": "<p>This is the Heading<\/p>",
+        "heading": "<h1><strong>This is the Heading<\/strong><\/h1>",
         "sub-heading": "<h3>This is a Sub-Heading<\/h3>",
         "button_label": "Follow us",
         "button_link": "",
