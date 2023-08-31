@@ -4,7 +4,7 @@
 .td-swiper__header {
   display: flex;
   justify-content: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 .td-swiper__subheading {
   margin-bottom: 5.5px;

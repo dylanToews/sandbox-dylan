@@ -74,15 +74,15 @@
 <div class="section-{{ section.id }} td-swiper">
   <div class="section-{{ section.id }}-padding td-swiper__wrapper">
     <div class="td-text-{{ section.settings.content_alignment }} td-page-width {% unless section.settings.page_layout == 'normal' %} td-page-width-{{ section.settings.page_layout }}{% endunless %}">
-      {% if section.settings.heading != blank or section.settings.copy != blank %}
+      {% if section.settings.heading != blank or section.settings.sub-heading != blank %}
         <div class="td-swiper__header" style="color: {{ section.settings.text_color }};">
           {% if section.settings.heading != blank %}
-            {% if section.settings.is_main_title %} <h1 {% else %} <h2 {% endif %} class="td-swiper__heading td-heading">
+           <div class="td-swiper__heading td-heading">
               {{ section.settings.heading }}
-            {% if section.settings.is_main_title %} </h1> {% else %} </h2> {% endif %}
+           </div>
           {% endif %}
-          {% if section.settings.copy != false %}         
-            <div class="td-swiper__copy">{{ section.settings.copy }}</div>
+          {% if section.settings.sub-heading != false %}         
+            <div class="td-swiper__sub-heading">{{ section.settings.sub-heading }}</div>
           {% endif %}
         </div>
       {% endif %}  
@@ -170,22 +170,16 @@
       "content": "Header"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "Join our 10k community"
-    },
-    {
-      "type": "checkbox",
-      "id": "is_main_title",
-      "default": false,
-      "label": "Use as page title (h1 tag will be used)"
+      "default": "<h1>This is a Heading</h1>"
     },
     {
       "type": "richtext",
-      "id": "copy",
-      "label": "Copy",
-      "default": "<p>@add_your_handle</p>"
+      "id": "sub-heading",
+      "label": "Sub-Heading",
+      "default": "<p>This is a Sub-Heading</p>"
     },
     {
       "type": "header",
@@ -194,7 +188,7 @@
     {
       "type": "text",
       "id": "button_label",
-      "default": "Follow us",
+      "default": "Button",
       "label": "Button label"
     },
     {
