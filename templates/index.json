@@ -7,8 +7,8 @@
           "type": "card",
           "settings": {
             "card_url": "",
-            "card_text": "Text on the card",
-            "card_linked-text": "Linked card text",
+            "card_text": "<p>Text on the card<\/p>",
+            "card_linked-text": "<p>Linked card text<\/p>",
             "card_linked-text-url": "",
             "image": "shopify:\/\/shop_images\/woman-poses-in-dark-room.jpg",
             "secondary_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
@@ -20,8 +20,8 @@
           "type": "card",
           "settings": {
             "card_url": "",
-            "card_text": "Text on the card",
-            "card_linked-text": "Linked card text",
+            "card_text": "<p>Text on the card<\/p>",
+            "card_linked-text": "<p>Linked card text<\/p>",
             "card_linked-text-url": "",
             "image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
             "secondary_image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
@@ -33,8 +33,8 @@
           "type": "card",
           "settings": {
             "card_url": "",
-            "card_text": "Text on the card",
-            "card_linked-text": "Linked card text",
+            "card_text": "<p>Text on the card<\/p>",
+            "card_linked-text": "<p>Linked card text<\/p>",
             "card_linked-text-url": "",
             "image": "shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
             "secondary_image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
@@ -46,8 +46,8 @@
           "type": "card",
           "settings": {
             "card_url": "",
-            "card_text": "Text on the card",
-            "card_linked-text": "Linked card text",
+            "card_text": "<p>Text on the card<\/p>",
+            "card_linked-text": "<p>Linked card text<\/p>",
             "card_linked-text-url": "",
             "image": "shopify:\/\/shop_images\/portrait-of-illuminated-laptop.jpg",
             "secondary_image": "shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
@@ -71,10 +71,12 @@
         "show_navigation_arrows": "dsk",
         "autorotate": false,
         "autorotate_speed": 5,
-        "text_color": "#000000",
+        "text_color": "#dd1d1d",
         "bg_color": "#ffffff",
-        "page_layout": "wide",
+        "page_layout": "slim",
         "content_alignment": "center",
+        "show_lower_container": false,
+        "text_location": "inside_card",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -87,7 +89,7 @@
           "settings": {
             "td-tabs__tab-heading": "<p>Heading 1 <\/p>",
             "td-tabs__tab-content": "<p>Content 1 <\/p>",
-            "tab-open": false
+            "tab-open": true
           }
         },
         "5b1b8426-b07b-4a10-9eee-4dc2fe11a10b": {
