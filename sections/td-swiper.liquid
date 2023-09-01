@@ -91,10 +91,24 @@
                 {% for block in section.blocks %}
                   <div class="swiper-slide td-swiper__slide" data-swiper-slide>
                     <div class="td-swiper__card">
-                      <a href="{{block.settings.content_url.url}}" target="_blank" class="td-swiper__card__photo-wrapper td-media td-media--square">
+                      {% if block.settings.card_url != blank %}
+                        <a href="{{block.settings.card_url.url}}" target="_blank" class="td-swiper__card__photo-wrapper td-media td-media--square">
+                        
+                      {% else %}
+                        <div class="td-swiper__card__photo-wrapper td-media td-media--square">
+
+                      {% endif %}
+
                         {% render 'td-image', object_image: block.settings.image %}
-                      </a>
-                      <div class="td-swiper__card_lower-container">
+
+                        {% if block.settings.card_url != blank %}
+                          </a>
+                        {% else %}
+                          </div>  
+                        {% endif %}
+
+                      {% if section.settings.text_location == "under_card"%}
+                      <div class= "td-swiper__card_lower-container">
                         {% if block.settings.secondary_image != blank %}
                           <a href="{{block.settings.card_linked-text-url}}" target="_blank">
                             <div class="td-media td-media--circle">
@@ -102,12 +116,14 @@
                             </div>
                           </a>
                         {% endif %}
-                        <div class="td-swiper__card_text-container">
-                          <h5>{{block.settings.card_text}}
-                          </h5>
-                          <a href="{{block.settings.card_linked-text-url}}" target="_blank">{{block.settings.card_linked-text}}
-                          </a>
-                        </div>
+                        
+                          <div class="td-swiper__card_text-container">
+                            <h5>{{block.settings.card_text}}
+                            </h5>
+                            <a href="{{block.settings.card_linked-text-url}}" target="_blank">{{block.settings.card_linked-text}}
+                            </a>
+                          </div>                         
+                        
                         {% if block.settings.social_icon != "" %}
                           <div class="td-swiper__icon td-media">
                             {% case block.settings.social_icon %}
@@ -131,6 +147,7 @@
                           </div>
                         {% endif %}
                       </div>
+                    {% endif %}
                     </div>
                     {% if block.settings.product != blank %}
                       <a class="td-swiper__card__product" href="{{ block.settings.product.url }}">
@@ -312,8 +329,30 @@
           }
         ],
         "default": "center",
-        "label": "Text alignment"
-      }, {
+        "label": "Heading Alignment"
+      }, 
+      {
+        "type": "checkbox",
+        "id": "show_lower_container",
+        "label": "Show Lower Container"
+      },
+      {
+        "type": "select",
+        "id": "text_location",
+        "label": "Text Location",
+        "options": [
+          {
+            "value": "under_card",
+            "label": "Under Card"
+          },
+          {
+            "value": "inside_card",
+            "label": "Inside Card"
+          }
+        ],
+        "default": "under_card"
+      },     
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
