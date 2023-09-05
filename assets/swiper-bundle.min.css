@@ -189,7 +189,7 @@
 }
 .swiper-button-next,
 .swiper-button-prev {
-  position: absolute;
+  position: relative;
   top: 50%;
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
@@ -239,7 +239,7 @@
   display: none;
 }
 .swiper-pagination {
-  position: absolute;
+  position: relative;
   text-align: center;
   transition: 0.3s opacity;
   transform: translate3d(0, 0, 0);

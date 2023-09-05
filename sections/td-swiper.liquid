@@ -71,16 +71,17 @@
 <div class="section-{{ section.id }} td-swiper">
   <div class="section-{{ section.id }}-padding td-swiper__wrapper">
     <div class="td-text-{{ section.settings.content_alignment }} td-page-width {% unless section.settings.page_layout == 'normal' %} td-page-width-{{ section.settings.page_layout }}{% endunless %}">
+
       {% if section.settings.heading != blank or section.settings.sub-heading != blank %}
         <div class="td-swiper__header" style="rte color: {{ section.settings.text_color }}!important;">
           {% if section.settings.heading != blank %}
-            <div class="td-swiper__heading">
+            <h1 class="td-swiper__heading">
               {{ section.settings.heading }}
-            </div>
+            </h1>
           {% endif %}
           {% if section.settings.sub-heading != false %}
-            <div class="td-swiper__sub-heading">{{ section.settings.sub-heading }}
-            </div>
+            <h3 class="td-swiper__sub-heading">{{ section.settings.sub-heading }}
+          </h3>
           {% endif %}
         </div>
       {% endif %}
@@ -199,18 +200,30 @@
                   </div>
                 {% endfor %}
               </div>
-              {%- if section.settings.show_pagination != blank -%}
-                <div class="swiper-pagination {% if section.settings.show_pagination != 'always' %}td-only-{{ section.settings.show_pagination }}{% endif %}"></div>
-              {%- endif -%}
-              {%- if section.settings.show_navigation_arrows != blank -%}
-                <div class="swiper-button-prev {% if section.settings.show_navigation_arrows != 'always' %}td-only-{{ section.settings.show_navigation_arrows }}{% endif %}">
-                  <span></span>
-                </div>
-                <div class="swiper-button-next {% if section.settings.show_navigation_arrows != 'always' %}td-only-{{ section.settings.show_navigation_arrows }}{% endif %}">
-                  <span></span>
-                </div>
-              {%- endif -%}
+
             </div>
+
+            
+            {%- if section.settings.show_pagination != blank -%}
+              <div class="swiper-pagination {% if section.settings.show_pagination != 'always' %}td-only-{{ section.settings.show_pagination }}{% endif %}"></div>
+            {%- endif -%}
+         
+              {%- if section.settings.show_navigation_arrows != blank -%}
+
+                  <div class="td-nav-arrows">
+                  <div class="swiper-button-prev {% if section.settings.show_navigation_arrows != 'always' %}td-only-{{ section.settings.show_navigation_arrows }}{% endif %}{% if section.settings.nav_arrow_outside %}td-nav-arrows-outside-prev{% endif %}">
+                    <span></span>
+                  </div>
+                  <div class="swiper-button-next {% if section.settings.show_navigation_arrows != 'always' %}td-only-{{ section.settings.show_navigation_arrows }}{% endif %}{% if section.settings.nav_arrow_outside %}td-nav-arrows-outside-next{% endif %}">
+                    <span></span>
+                  </div>
+                  </div>
+
+           
+
+
+              {%- endif -%}
+
           </swiper-slider>
         {% endif %}
       </div>
@@ -233,16 +246,16 @@
         "content": "Header"
       },
       {
-        "type": "richtext",
+        "type": "text",
         "id": "heading",
         "label": "Heading",
-        "default": "<h1>This is a Heading</h1>"
+        "default": "This is a Heading"
       },
       {
-        "type": "richtext",
+        "type": "text",
         "id": "sub-heading",
         "label": "Sub-Heading",
-        "default": "<p>This is a Sub-Heading</p>"
+        "default": "This is a Sub-Heading"
       },
       {
         "type": "header",
@@ -374,11 +387,6 @@
         "label": "Heading Alignment"
       }, 
       {
-        "type": "checkbox",
-        "id": "show_lower_container",
-        "label": "Show Lower Container"
-      },
-      {
         "type": "select",
         "id": "text_location",
         "label": "Text Location",
@@ -393,7 +401,13 @@
           }
         ],
         "default": "under_card"
-      },     
+      }, 
+      {
+        "type": "checkbox",
+        "id": "nav_arrow_outside",
+        "label": "Navigation Arrow Outside of Cards on Desktop",
+        "default": true
+      },    
       {
         "type": "range",
         "id": "padding_top",

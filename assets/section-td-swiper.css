@@ -76,9 +76,9 @@
   height: 40px;
   overflow: hidden;
 }
-  .td-swiper__heading {
+  /* .td-swiper__heading h1{
     color: pink!important;
-  }
+  } */
 
 .td-swiper__card_lower-container h4 {
   margin: 0;
@@ -129,4 +129,22 @@
 .td-swiper__card__product {
   margin: 10px 0;
   display: block;
+}
+
+@media screen and (min-width: 990px) {
+  .td-nav-arrows .td-nav-arrows-outside-next  {
+    right: -45px!important
+  }
+  .td-nav-arrows .td-nav-arrows-outside-prev  {
+    left:-45px!important;
+  }
+
+  .td-nav-arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -185px;
+  }
+
+
 }

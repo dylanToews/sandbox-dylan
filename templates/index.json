@@ -68,15 +68,15 @@
         "button_label": "Follow us",
         "button_link": "",
         "show_pagination": "always",
-        "show_navigation_arrows": "dsk",
+        "show_navigation_arrows": "always",
         "autorotate": false,
         "autorotate_speed": 5,
         "text_color": "#dd1d1d",
         "bg_color": "#ffffff",
         "page_layout": "slim",
         "content_alignment": "center",
-        "show_lower_container": false,
         "text_location": "inside_card",
+        "nav_arrow_outside": true,
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -114,6 +114,7 @@
         "5b1b8426-b07b-4a10-9eee-4dc2fe11a10b",
         "8692a1a5-8091-4b92-a402-e342ec4abed5"
       ],
+      "disabled": true,
       "settings": {
         "td-tabs__section-title": "<p>This is the Title<\/p>"
       }
