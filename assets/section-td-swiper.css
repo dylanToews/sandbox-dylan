@@ -131,6 +131,13 @@
   display: block;
 }
 
+.td-nav-arrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -185px;
+}
+
 @media screen and (min-width: 990px) {
   .td-nav-arrows .td-nav-arrows-outside-next  {
     right: -45px!important
@@ -138,13 +145,4 @@
   .td-nav-arrows .td-nav-arrows-outside-prev  {
     left:-45px!important;
   }
-
-  .td-nav-arrows {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: -185px;
-  }
-
-
 }

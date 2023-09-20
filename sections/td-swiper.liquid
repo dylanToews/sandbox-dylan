@@ -65,6 +65,9 @@
         "450": {
           "slidesPerView": "auto"
         }
+      },
+  "scrollbar": {
+         "el": ".swiper-scrollbar"
       }
     }{%- endcapture -%}
 
@@ -218,12 +221,8 @@
                     <span></span>
                   </div>
                   </div>
-
-           
-
-
               {%- endif -%}
-
+              <div class="swiper-scrollbar"></div>
           </swiper-slider>
         {% endif %}
       </div>
@@ -312,7 +311,14 @@
           }
         ],
         "default": "dsk"
-      }, {
+      }, 
+      {
+        "type": "checkbox",
+        "id": "nav_arrow_outside",
+        "label": "Navigation Arrow Outside of Cards on Desktop (Slim Layout)",
+        "default": true
+      }, 
+      {
         "type": "checkbox",
         "id": "autorotate",
         "label": "Auto-rotate slides",
@@ -401,12 +407,6 @@
           }
         ],
         "default": "under_card"
-      }, 
-      {
-        "type": "checkbox",
-        "id": "nav_arrow_outside",
-        "label": "Navigation Arrow Outside of Cards on Desktop",
-        "default": true
       },    
       {
         "type": "range",
@@ -515,4 +515,4 @@
       }
     ]
   }
-{% endschema %}}
+{% endschema %}
