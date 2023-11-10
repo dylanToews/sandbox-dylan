@@ -1,0 +1,71 @@
+{{ 'section-td-NAME.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  .td-NAME {
+    height: {{ section.settings.section_height_mb }}px;
+    background-color: {{ section.settings.bg_color }};
+  }
+
+
+  @media only screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .td-NAME {
+      height: {{ section.settings.section_height_dsk }}px;
+    }
+  }
+
+{%- endstyle -%}
+
+
+<div class="section-{{ section.id }} section-{{ section.id }}-padding td-NAME">
+  <div class="td-ABRV__section-wrapper">
+
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "TD - NAME",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Margin Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "label": "Margin Bottom",
+        "default": 0
+      }
+    ],
+      "presets": [
+      {
+        "name": "TD - NAME",
+        "category": "Components"
+      }
+    ]
+  }
+{% endschema %}
